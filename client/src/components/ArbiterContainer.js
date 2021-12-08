@@ -1,9 +1,9 @@
 import React from 'react'
 import ArbiterList from './ArbiterList'
-import CourtList from './CourtList'
+import { useState, useEffect } from 'react'
 
 export default function ArbiterContainer() {
-const [arbiter, setArbiter] = useState([])
+const [arbiters, setArbiter] = useState([])
 
 useEffect(() => {
 fetch("/arbiters")
@@ -13,7 +13,7 @@ fetch("/arbiters")
 
 return (
         <div>
-            <ArbiterList/>
+            <ArbiterList arbiters={arbiters}/>
         </div>
     )
 }
