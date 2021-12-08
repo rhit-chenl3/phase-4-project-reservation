@@ -3,7 +3,11 @@ import CourtList from './CourtList'
 
 export default function ArbiterContainer() {
 const [arbiter, setArbiter] = useState([])
-    return (
+useEffect(() => {
+
+}, [input])
+
+return (
         <div>
             
         </div>
