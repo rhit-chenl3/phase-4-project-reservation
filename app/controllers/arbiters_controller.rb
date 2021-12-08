@@ -9,8 +9,7 @@ class ArbitersController < ApplicationController
         render json: arbiters, status: :ok
     end
     def create(params)
-        arbiters = find_arbiters
-        arbiters.create!(params)
+        arbiter=Arbiters.create!(params)
         render json: arbiters, status: :created
     end
     def updated

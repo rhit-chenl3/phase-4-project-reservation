@@ -58,11 +58,11 @@ export default function LoginPage({ onLogin }) {
             <Button block size="lg" type="submit" disabled={!validateForm()}>
                 {isLoading ? "Loading..." : "Login"}
             </Button>
-            <Form.Group>
+            {/* <Form.Group>
               {errors.map((err) => (
                 <Alert key={err}>{err}</Alert>
               ))}
-            </Form.Group>
+            </Form.Group> */}
         </Form>
         </div>
     );

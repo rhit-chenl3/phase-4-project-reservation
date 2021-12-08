@@ -8,10 +8,9 @@ class CourtsController < ApplicationController
         courts = find_courts
         render json: courts, status: :ok
     end
-    def create(params)
-        courts = find_courts
-        courts.create!(params)
-        render json: courts, status: :created
+    def create
+        court= Court.create!(params)
+        render json: court, status: :created
     end
     def updated
         courts = find_courts

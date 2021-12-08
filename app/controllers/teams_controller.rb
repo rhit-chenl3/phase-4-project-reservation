@@ -1,17 +1,17 @@
 class TeamsController < ApplicationController
+    skip_before_action :authorize, only: :create
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     def index
       teams = Team.all
       render json: teams 
     end
     def show
-        teams = find_teams
-        render json: teams, status: :ok
+        render json: @current_team, status: :ok
     end
-    def create(params)
-        teams = find_teams
-        teams.create!(params)
-        render json: teams, status: :created
+    def create
+        team =Team.create!(params)
+        session[:team_id]=team.id
+        render json: team, status: :created
     end
     def updated
         teams = find_teams
@@ -33,6 +33,6 @@ class TeamsController < ApplicationController
         render json: { error: "#{exception.model} not found" }, status: :not_found
     end
     def patch_params
-        params.permit(:name,:email)
+        params.permit(:name,:email,:password,:password_comfirmation)
     end
 end
