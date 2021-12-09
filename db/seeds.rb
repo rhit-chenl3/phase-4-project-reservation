@@ -14,5 +14,7 @@ puts "Arbiter added"
 bullhogs= Team.create(name: "bullhogs", email: "bullhogs@gmail.com")
 walnuts=Team.create(name: "walnuts", email: "walnuts@gmail.com")
 wonkies= Team.create(name: "wonkies", email: "wonkies@gmail.com")
+
+Court.create(name: "jonhson park",location:"maryland",time: 2, charge_per_hour:60, team_id: bullhogs.id, arbiter_id: ale.id)
 puts "We have teams"
-puts "Done Seeding"
+puts "Done Seeding" 

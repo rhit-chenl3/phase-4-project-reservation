@@ -2,6 +2,7 @@ import React from "react";
 import "../index.css";
 import ArbiterContainer from "./ArbiterContainer";
 import CourtContainer from "./CourtContainer";
+import TeamContainer from "./TeamContainer";
 
 export default function HomePage() {
 
@@ -12,6 +13,7 @@ export default function HomePage() {
                 <p className="text-muted">Streamline your game scheduling process!</p>
                 <CourtContainer />
                 <ArbiterContainer />
+                <TeamContainer />
             </div>
         </div>
     )
