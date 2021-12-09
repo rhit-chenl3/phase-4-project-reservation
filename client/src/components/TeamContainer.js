@@ -19,6 +19,18 @@ const handleAddFormChange = (event) => {
 
     setAddTeams(newFormData)
 
+    
+};
+const handleAddFormSubmit = (event) => {
+    event.preventDefault();
+
+    const newTeam = {   
+        // name: newFormData.name,
+        // email: newFormData.address
+    }
+    const newTeams = [...teams, newTeam]
+    setTeams(newTeams)
+    
 }
 
 
@@ -47,7 +59,7 @@ const handleAddFormChange = (event) => {
         </tbody>
             </table>    
             <h2> Add a Team </h2>
-            <form>
+            <form onSubmit={handleAddFormSubmit}>
               <input type="text" name="name" required="required" placeholder="Enter a Team Name" onChange={handleAddFormChange}/>  
               <input type="email" name="email" required="required" placeholder="Enter Email" onChange={handleAddFormChange}/>  
               <button type="submit"> Submit </button>
